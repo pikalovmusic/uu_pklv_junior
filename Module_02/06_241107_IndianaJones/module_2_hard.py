@@ -2,10 +2,9 @@ def get_password(num: int):
     result = ''
     for i in range(1, num):
         a = i
-        for j in range(a, num):
+        for j in range(a + 1, num):
             b = j
-            if a < b:
-                if num % (a + b) == 0 or a + b == num: result += '%s%s' % (str(a), str(b))
+            if num % (a + b) == 0 or a + b == num: result += '%s%s' % (str(a), str(b))
 
     return result
 
@@ -17,4 +16,5 @@ while True:
     print(f'Пароль: {get_password(int(user_input))}\n')
 
 # опытным путём выявлено, что не обязательно перебирать число для пар от 1 до 20,
-# достаточно перебрать числа до значения num невключительно, а во втором цикле для числа b - от числа a до num
+# достаточно перебрать числа до значения num невключительно
+# во втором цикле для числа b - от числа a+1
