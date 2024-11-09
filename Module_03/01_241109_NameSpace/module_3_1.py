@@ -14,10 +14,7 @@ def string_info(string: str) -> tuple:
 def is_contains(string: str, list_to_search: list) -> bool:
     count_calls()
     string_to_search = ' '.join(list_to_search).lower()
-
-    match string_to_search.__contains__(string.lower()):
-        case True: return True
-        case Default: return False
+    return string_to_search.__contains__(string.lower())
 
 
 # Пример из урока (для проверки себя):
