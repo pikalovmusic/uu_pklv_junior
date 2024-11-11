@@ -11,17 +11,17 @@ def validate_email(email: str) -> bool:
 
 def send_email(message: str, recipient: str, *, sender: str = 'university.help@gmail.com'):
     if not validate_email(sender) or not validate_email(recipient):
-        print(
-            f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
+        print('Невозможно отправить письмо с адреса %s на адрес %s' %
+              (sender, recipient))
     else:
         if sender == recipient:
             print('Нельзя отправить письмо самому себе!')
         elif sender != SENDER_DEFAULT:
-            print(
-                f'НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}.')
+            print('НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса %s на адрес %s.' %
+                  (sender, recipient))
         else:
-            print(
-                f'Письмо успешно отправлено с адреса {sender} на адрес {recipient}.')
+            print('Письмо успешно отправлено с адреса %s на адрес %s.' %
+                  (sender, recipient))
 
 
 # Для проверки задания:
