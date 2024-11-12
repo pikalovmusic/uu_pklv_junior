@@ -1,5 +1,5 @@
 SENDER_DEFAULT = 'university.help@gmail.com'
-DOMAINS_VALID = ('.net', '.com', '.ru')
+DOMAINS_VALID = {'.net', '.com', '.ru'}
 
 
 def validate_email(email: str) -> bool:
