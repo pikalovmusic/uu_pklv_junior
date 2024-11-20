@@ -3,7 +3,7 @@
 # Рекурсивный вызов реализован
 
 
-def calculate_structure_sum(data):
+def calculate_structure_sum(data) -> int:
     result = 0
     for item in data:
         if isinstance(item, int):
