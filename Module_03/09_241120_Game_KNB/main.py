@@ -17,8 +17,7 @@ def select_human() -> str:
         gesture = input('Камень ножницы бумага, раз два три: ')
         if gesture.lower() in HAND_GESTURES:
             return gesture.capitalize()
-        else:
-            print('Попробуйте показать другой жест.')
+        print('Попробуйте показать другой жест.')
 
 
 def select_bot() -> str:
@@ -70,6 +69,7 @@ def play():
         user_answer = input('Продолжить? да/нет: ')
 
         if user_answer.lower() == 'нет':
+            show_score()
             exit(0)
 
 
