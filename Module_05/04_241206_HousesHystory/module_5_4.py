@@ -5,8 +5,8 @@ class House():
         cls.houses_history.append(args[0])
         return object.__new__(cls)
 
-    def __init__(self, *args, **kwargs):
-        self.name, self.number_of_floors = args
+    def __init__(self, name: str, floors: int, **kwargs):
+        self.name, self.number_of_floors = name, floors
         for arg, value in kwargs.items():
             setattr(self, arg, value)
 
