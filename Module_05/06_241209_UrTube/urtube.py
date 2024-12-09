@@ -21,7 +21,7 @@ class Video():
     def __str__(self) -> str:
         return self.title
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.__str__()
 
     def playing_process(self):
@@ -39,7 +39,7 @@ class UrTube():
 
     def get_user(self, nickname: str) -> User:
         for user in self.users:
-            if user.nickname == nickname.lower():
+            if user.nickname.lower() == nickname.lower():
                 return user
 
     def get_video(self, title: str) -> Video:
@@ -86,8 +86,9 @@ class UrTube():
             return
 
         for video in self.videos:
-            if video.title.lower().__contains__(title.lower()):
+            if video.title.lower() == title.lower():
                 if video.adult_mode and self.current_user.age < 18:
                     print('Вам нет 18 лет, пожалуйста покиньте страницу')
                     return
                 video.playing_process()
+                break
