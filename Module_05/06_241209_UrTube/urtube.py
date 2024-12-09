@@ -25,8 +25,8 @@ class Video():
         return self.__str__()
 
     def playing_process(self):
-        for sec in range(self.time_now, self.duration):
-            print(sec+1, end=' ', flush=True)
+        for sec in range(self.time_now+1, self.duration+1):
+            print(sec, end=' ', flush=True)
             sleep(1)
             self.time_now = sec
         self.time_now = 0
