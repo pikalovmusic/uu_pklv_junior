@@ -26,7 +26,7 @@ class Video():
 
     def playing_process(self):
         for sec in range(self.time_now, self.duration):
-            print(sec, end=' ', flush=True)
+            print(sec+1, end=' ', flush=True)
             sleep(1)
             self.time_now = sec
         self.time_now = 0
@@ -59,11 +59,9 @@ class UrTube():
         if user != None:
             if user.password == hash(password):
                 self.current_user = user
-            else:
-                print('Неверное имя пользователя или пароль')
-        else:
-            # тут в обоих случаях пишем так, что бы не было подсказки
-            print('Неверное имя пользователя или пароль')
+                return
+
+        print('Неверное имя пользователя или пароль')
 
     def register(self, nickname: str, password: str, age: int):
         if self.get_user(nickname) != None:
