@@ -3,13 +3,13 @@ class Animal:
         self.name, self.alive, self.fed = name, True, False
 
     def eat(self, food):
-        if food.edible:
-            print(f'{self.name} съел "{food.name.lower()}"')
-            self.fed = True
+        if not food.edible:
+            print(f'{self.name} не стал есть "{food.name.lower()}"')
+            self.die()
             return
 
-        print(f'{self.name} не стал есть "{food.name.lower()}"')
-        self.die()
+        print(f'{self.name} съел "{food.name.lower()}"')
+        self.fed = True
 
     def die(self):
         self.alive = False
