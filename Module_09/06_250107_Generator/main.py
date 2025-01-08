@@ -8,11 +8,18 @@ def all_variants(text: str):
 
 # Проверка:
 a = all_variants("abc")
-b = all_variants("абвгдеёжз")
+b = all_variants("абв")
+c = all_variants('123')
 for i in a:
     print(i)
 
 print()
 
 for i in b:
+    print(i)
+
+
+print()
+
+for i in c:
     print(i)
