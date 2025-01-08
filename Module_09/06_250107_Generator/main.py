@@ -1,11 +1,10 @@
 def all_variants(text: str):
-    j, length = 1, len(text)
-    while j <= length:
+    length = len(text)+1
+    for j in range(1, length):
         i = 0
-        while i+j <= length:
+        while i+j < length:
             yield text[i:i+j]
             i += 1
-        j += 1
 
 
 # Проверка:
