@@ -1,6 +1,6 @@
 import threading
 
-from eel import sleep
+from time import sleep
 
 
 class Knight(threading.Thread):
