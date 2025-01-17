@@ -48,11 +48,11 @@ class Cafe:
                         table.guest = None
                         print(f'Стол номер {table.number} свободен')
 
-                if table.guest is None and not self.queue.empty():
-                    table.guest = self.queue.get()
-                    table.guest.start()
-                    print(
-                        f'{table.guest.name} вышел(-ла) из очереди и сел(-а) за стол номер {table.number}')
+                        if not self.queue.empty():
+                            table.guest = self.queue.get()
+                            table.guest.start()
+                            print(
+                                f'{table.guest.name} вышел(-ла) из очереди и сел(-а) за стол номер {table.number}')
 
     def __free_tables(self) -> bool:
         for table in self.tables:
